@@ -1,0 +1,84 @@
+% (c) Jeremy Jacob
+% This file is made available for educational purposes
+% It may not be distributed for profit, or without this header.
+
+% Altered by Daniel Brown.
+
+\documentclass[aspectratio=169]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[british]{babel}
+\usepackage[sc]{mathpazo}
+\usepackage[scaled=0.9]{helvet}
+\usepackage{courier,textcomp,amsmath,listings, color}
+
+% THEME SET UP
+% University colours
+\definecolor{UoYgreen}{cmyk}{0.82,0.00,0.64,0.70} % Pantone 567
+\definecolor{UoYblue} {cmyk}{1.00,0.72,0.00,0.32} % Pantone 281
+% Departmental colours
+\definecolor{UoYCSbrightgreen}{cmyk}{0.46,0.17,1.00,0.01}
+\definecolor{UoYCSyellowgreen}{cmyk}{0.16,0.02,0.51,0.00}
+\definecolor{UoYCSgrey}       {cmyk}{0.00,0.00,0.00,0.60}
+\definecolor{UoYCSblue}       {cmyk}{0.99,0.68,0.28,0.10}
+
+\usetheme[secheader]{Boadilla}
+\usecolortheme[named=UoYCSblue]{structure}
+\setbeamertemplate{navigation symbols}{} %removes navigation buttons
+
+% CODE HIGHLIGHTING COLOURS SET UP
+% Set up for C#, Credit: http://tex.stackexchange.com/questions/124953/syntax-highlighting-in-listings-for-c-that-it-looks-like-in-visual-studio
+%\setmonofont{Consolas} %to be used with XeLaTeX or LuaLaTeX
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+
+\lstset
+{
+  language=[Sharp]C,
+  captionpos=b,
+  %numbers=left,
+  %numberstyle=\tiny,
+  frame=lines,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  escapeinside={(*@}{@*)},
+  commentstyle=\color{greencomments},
+  morekeywords={partial, var, value, get, set},
+  keywordstyle=\color{bluekeywords},
+  stringstyle=\color{redstrings},
+  basicstyle=\ttfamily\small,
+}
+
+%Presentation information
+\title[Presentation Template]{\LaTeX\ Presentation Template}
+\author[DTB]{Daniel Brown}
+\institute[UoY, CS]{The University of York, Department of Computer Science}
+\date{\today}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Examples} %Section title on top of each slide
+  \begin{frame}[containsverbatim]
+    \frametitle{Example hyperlinks and code}
+    %Hyperlink
+    Check out this link: \beamergotobutton{\href{https://dannybrown.net}{www.DannyBrown.net}}\vspace{10 mm}
+
+    %Display code
+    Check out this code:
+    \begin{lstlisting}[caption=Some C$^\sharp$ code in the presentation!, label=lst:test]
+      public class Hello1
+      {
+         public static void Main()
+         {
+            System.Console.WriteLine("Hello, World!");
+         }
+      }
+    \end{lstlisting}
+  \end{frame}
+\end{document}
